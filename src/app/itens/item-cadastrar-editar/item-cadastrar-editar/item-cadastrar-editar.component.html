@@ -1,0 +1,28 @@
+<mat-toolbar>{{(item && item.id)?'Editar Item':'Cadastrar Item'}}</mat-toolbar>
+
+<div class="componente-container">
+    <form class="form-padrao" *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="formGroup.valid && salvarOuAlterar()"
+        novalidate>
+        <mat-form-field>
+            <input matInput placeholder="Nome" formControlName="nome" required autocomplete="off">
+            <mat-error>Campo é obrigatório</mat-error>
+        </mat-form-field>
+
+          <div  *ngFor="let subitem of subItens$; index as i">
+            <div class="form-check" >
+              <input type="checkbox"
+              [value]="subitem.id" (change)="onCheckboxChange(subitem.id,subitem.nome,$event)" [checked]="subitem.isChecked" />
+              <label class="form-check-label" >
+                  {{subitem.nome}}
+              </label>
+            </div>
+          </div>
+
+
+        <div class="linha-botoes">
+            <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Salvar</button>
+            <button *ngIf="item && item.id" type="button" color="warn" mat-raised-button (click)="remover()">Remover</button>
+            <button type="button" mat-raised-button routerLink="/itens">Cancelar</button>
+        </div>
+    </form>
+</div>

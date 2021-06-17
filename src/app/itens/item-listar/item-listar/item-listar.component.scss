@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+}
+.table-container {
+  min-height: 300px;
+  max-height: 300px;
+  overflow: auto !important;
+  background-color: white;
+}
+.botoes{
+  text-align: right;
+  padding-right: 2%;
+}
