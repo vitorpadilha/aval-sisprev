@@ -24,7 +24,6 @@
 
         <div class="linha-botoes">
             <button mat-raised-button color="primary" [disabled]="!formGroup.valid">Salvar</button>
-            <button *ngIf="item && item.id" type="button" color="warn" mat-raised-button (click)="remover()">Remover</button>
             <button type="button" mat-raised-button routerLink="/itens">Cancelar</button>
         </div>
     </form>

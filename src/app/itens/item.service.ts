@@ -15,7 +15,7 @@ export class ItemService {
     return this.httpCliente.get<Item[]>(this.baseUrl+"/"+this.element);
   }
   remover(item: Item):Observable<{}> {
-    return this.httpCliente.delete(this.baseUrl+"/"+this.element);
+    return this.httpCliente.delete(this.baseUrl+"/"+this.element+"/"+item.id);
   }
   cadastrar(item: Item): Observable<Item> {
       return this.httpCliente.post<Item>(this.baseUrl+"/"+this.element, item);

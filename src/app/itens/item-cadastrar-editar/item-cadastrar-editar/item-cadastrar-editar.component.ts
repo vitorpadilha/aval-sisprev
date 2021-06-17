@@ -90,19 +90,7 @@ export class ItemCadastrarEditarComponent implements OnInit {
     return;
   }
 
-  remover() {
-    if (this.item) {
-        this.itemService.remover(this.item).subscribe(
-            (response) => {
-                this.matSnackBar.open("Item deletado com sucesso!");
-                this.router.navigateByUrl("/itens");
-            },
-            (error) => {
-                this.matSnackBar.open("Erro ao deletar");
-            }
-        );
-    }
-}
+
 salvarOuAlterar() {
 
   if (this.item && this.item.id && this.formGroup && this.formGroup.valid) {
