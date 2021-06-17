@@ -17,6 +17,9 @@
               </label>
             </div>
           </div>
+          <mat-error *ngIf="formGroup.controls.subitens.hasError('required')">
+            Escolha ao menos um subitem.
+          </mat-error>
 
 
         <div class="linha-botoes">
